@@ -32,13 +32,13 @@
 	$body = '<h1>Зустрічайте супер листа!</h1>';
 
 	if(trim(!empty($_POST['name']))){
-		$body.=$_POST['name'];
-	}	
+		$body.='<p><strong>Ім`я:</strong> '.$_POST['name'].'</p>';        
+	}
 	if(trim(!empty($_POST['phone']))){
-		$body.=$_POST['phone'];
+		$body.='<p><strong>Телефон:</strong> '.$_POST['phone'].'</p>';        
 	}
 	if(trim(!empty($_POST['mail']))){
-		$body.=$_POST['mail'];
+		$body.='<p><strong>Телефон:</strong> '.$_POST['mail'].'</p>';        
 	}
 	
 	/*

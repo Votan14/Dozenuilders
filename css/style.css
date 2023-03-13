@@ -872,10 +872,8 @@ section {
   background: #0068e3;
 }
 
-.no-webp .find{
-  background: url("../img/06.jpg") 0 0 no-repeat; }
-
 .find {
+  background: url("../img/06.jpg") 0 0 no-repeat;
   background-size: cover;
   padding-top: 96px;
   padding-bottom: 96px;
@@ -972,12 +970,11 @@ section {
   color: #e3e3e3;
 }
 
-.no-webp .advantage{
-  background: url("../img/05.jpg") 0 0 no-repeat; }
-
 .advantage {
   padding-top: 130px;
   padding-bottom: 0px;
+  background: url("../img/05.jpg") no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 
@@ -1028,10 +1025,8 @@ section {
   padding: 22px 50px;
 }
 
-.no-webp .thanks{
-  background: url("../img/thx.jpg") 0 0 no-repeat; }
-
 .thanks {
+  background: url("../img/thx.jpg") 0 0 no-repeat;
   background-size: cover;
   height: 85vh;
 }
@@ -1298,9 +1293,3 @@ section {
     font-size: 50px;
   }
 }
-
-.webp .find{ background: url(../img/06.webp) 0 0 no-repeat; }
-
-.webp .advantage{ background: url(../img/05.webp) 0 0 no-repeat; }
-
-.webp .thanks{ background: url(../img/thx.webp) 0 0 no-repeat; }
