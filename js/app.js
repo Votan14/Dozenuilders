@@ -682,6 +682,7 @@
                         let responseResult = await response.json();
                         form.classList.remove("_sending");
                         formSent(form, responseResult);
+                        window.location.href = "/thanks.html";
                     } else {
                         alert("Помилка");
                         form.classList.remove("_sending");
@@ -689,6 +690,7 @@
                 } else if (form.hasAttribute("data-dev")) {
                     e.preventDefault();
                     formSent(form);
+                    window.location.href = "/thanks.html";
                 }
             } else {
                 e.preventDefault();
