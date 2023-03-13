@@ -728,6 +728,52 @@
             }));
         }
     }), 0);
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date);
+        var seconds = Math.floor(t / 1e3 % 60);
+        var minutes = Math.floor(t / 1e3 / 60 % 60);
+        var hours = Math.floor(t / (1e3 * 60 * 60) % 2);
+        return {
+            total: t,
+            hours,
+            minutes,
+            seconds
+        };
+    }
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var hoursSpan = clock.querySelector(".hours");
+        var minutesSpan = clock.querySelector(".minutes");
+        var secondsSpan = clock.querySelector(".seconds");
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
+            hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+            minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+            if (t.total <= 0) clearInterval(timeinterval);
+        }
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1e3);
+    }
+    var deadline = new Date(Date.parse(new Date) + 15 * 24 * 60 * 60 * 1e3);
+    initializeClock("countdown", deadline);
+    const mask = (selector, pattern) => {
+        function createMask() {
+            let matrix = pattern, i = 0, def = matrix.replace(/\D/g, ""), val = this.value.replace(/\D/g, "");
+            if (def.length >= val.length) val = def;
+            this.value = matrix.replace(/./g, (function(a) {
+                return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+            }));
+        }
+        let inputs = document.querySelectorAll(selector);
+        inputs.forEach((input => {
+            input.addEventListener("input", createMask);
+            input.addEventListener("focus", createMask);
+            input.addEventListener("blur", createMask);
+        }));
+    };
+    mask(".phone-ukr", "+ __ (___) ___  __ ");
+    mask(".partner .card", "____ ____ ____ ____");
     window["FLS"] = true;
     isWebp();
     spollers();

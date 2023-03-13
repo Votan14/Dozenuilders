@@ -1060,6 +1060,38 @@ section {
   text-align: center;
 }
 
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.countdown.dotts {
+  position: relative;
+}
+
+.countdown.dotts::before {
+  content: ":";
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.countdown-time.dotts {
+  position: relative;
+}
+
+.countdown-time.dotts::before {
+  content: ":";
+  position: absolute;
+  right: -50px;
+  top: 0px;
+}
+
 @media (max-width: 79.375em) {
   [class*=__container] {
     max-width: 60.625rem;
@@ -1272,6 +1304,10 @@ section {
   .thanks__text {
     font-size: 18px;
   }
+
+  .countdown-time.dotts::before {
+    right: -40px;
+  }
 }
 
 @media (max-width: 29.99875em) {
@@ -1291,5 +1327,9 @@ section {
 
   .advantage__time {
     font-size: 50px;
+  }
+
+  .countdown-time.dotts::before {
+    right: -35px;
   }
 }
