@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230313204634">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230314091853">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@
 								</ul>
 							</nav>
 							<div class="header__menu-link">
-								<a href="#" data-popup="#popup" class="header__button blue-button">
+								<a href="#" data-popup="#popup" class="header__button blue-button" id="popup__click">
 									Leave a request
 								</a>
 							</div>
@@ -92,15 +92,15 @@
 					<p class="popup__text">
 						Our manager will contact you
 					</p>
-					<form action="files/sendmail/sendmail.php" data-ajax method="POST" class="popup__form">
+					<form action="#" method="POST" class="g-form" id="g-form-1" data-ajax>
 						<div class="popup__input-box">
-							<input data-required autocomplete="off" type="text" name="name" data-error="This field is required" placeholder="Your name" class="popup__input input">
+							<input data-required autocomplete="off" type="text" name="Ім'я" data-error="This field is required" placeholder="Your name" class="popup__input input">
 						</div>
 						<div class="popup__input-box">
-							<input data-required autocomplete="off" type="tel" name="phone" data-error="This field is required" placeholder="Your phone number" class="popup__input input phone-ukr">
+							<input data-required autocomplete="off" type="tel" name="Телефон" data-error="This field is required" placeholder="Your phone number" class="popup__input input phone-ukr">
 						</div>
 						<div class="popup__input-box">
-							<input data-required="email" autocomplete="off" type="text" name="mail" data-error="This field is required" placeholder="Enter your mail" class="popup__input input">
+							<input data-required="email" autocomplete="off" type="text" name="Email" data-error="This field is required" placeholder="Enter your mail" class="popup__input input">
 						</div>
 						<div class="popup__button-box">
 							<button type="submit" class="popup__button button blue-button">Leave a request</button>
@@ -110,7 +110,9 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230313204634"></script>
+	<script src="js/app.min.js?_v=20230314091853"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?_v=20230314091853"></script>
+	<script src="js/g-form.js?_v=20230314091853"></script>
 </body>
 
 </html>

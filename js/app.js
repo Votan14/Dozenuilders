@@ -671,7 +671,7 @@
                 if (ajax) {
                     e.preventDefault();
                     const formAction = form.getAttribute("action") ? form.getAttribute("action").trim() : "#";
-                    const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
+                    const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "POST";
                     const formData = new FormData(form);
                     form.classList.add("_sending");
                     const response = await fetch(formAction, {
@@ -774,6 +774,9 @@
     };
     mask(".phone-ukr", "+ __ (___) ___  __ ");
     mask(".partner .card", "____ ____ ____ ____");
+    setTimeout((function() {
+        document.getElementById("popup__click").click();
+    }), 15e3);
     window["FLS"] = true;
     isWebp();
     spollers();
